@@ -16,6 +16,7 @@ slider.oninput = function () {
 };
 
 buttonElement.addEventListener('click', generatePassword);
+password.addEventListener('click', copyPassword);
 
 function generatePassword() {
   let pass = '';
@@ -25,4 +26,10 @@ function generatePassword() {
 
   containerPassword.classList.remove('hide');
   password.innerHTML = pass;
+  newPassword = pass;
+}
+
+function copyPassword() {
+  alert('Senha copiada com sucesso!');
+  navigator.clipboard.writeText(newPassword);
 }
